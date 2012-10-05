@@ -43,36 +43,37 @@
   <body>
   
   
-  
-  
-  
-  
-  <!-- <h1><?= $_GET['id']; ?>: Page – <?= $_GET['page']?></h1> -->
-  
   <?
   
-  $dir    = getcwd() . '/uploads/' . $_GET['id'] . '/';
-  $files1 = scandir($dir);
+  $dir  = getcwd() . '/uploads/' . $_GET['id'] . '/';
+  $files = scandir($dir);
   
   // removes first, blank to records from array
-  array_splice($files1, 0, 2);
+  array_splice($files, 0, 2);
   
 
-// print_r($files1);
+if($_GET['page']==0){ ?>
+  
+<!-- show instructions -->
 
-if($_GET['page']==-2){ ?>
+  <div id="overlay">
+    <nav>
+      <a href="<?=$ROOT_URL?>iphone.php?id=<?= $_GET["id"]; ?>&amp;page=<?= $_GET['page']+1?>" onclick="OpenLink(this); return false">previous screen</a>
+      <a href="<?=$ROOT_URL?>iphone.php?id=<?= $_GET["id"]; ?>&amp;page=<?= $_GET['page']-1?>" onclick="OpenLink(this); return false">next screen</a>
+    </nav>
+    <div id="meta">
+      <p><?= $_GET['page']?> of <?=count($files)?></p>
+      <p><a href="http://dropui.com/<?= $_GET['id']; ?>" onclick="OpenLink(this); return false">dropui.com/<?= $_GET['id']; ?></a></p>
+    </div>
+  </div>
+  
+  <img src="uploads/<?= $_GET['id']; ?>/<?=$files1[$_GET['page']]?>" width="640" height="920" />
 
-  <img name="Instructions" src="assets/img/iPhone-instructions.png" width="640" height="920" border="0" id="Instructions" usemap="#m_Instructions" alt="" />
+  <!-- <img name="Instructions" src="assets/img/iPhone-instructions.png" width="640" height="920" border="0" id="Instructions" usemap="#m_Instructions" alt="" />
   <map name="m_Instructions" id="m_Instructions">
-  <area shape="rect" coords="197,0,640,920" href="http://192.168.250.43/~me/dev.dropui.local/iphone.php?id=<?= $_GET["id"]; ?>&amp;page=<?= $_GET['page']+1?>"  onclick="OpenLink(this); return false" alt="" />
+  <area shape="rect" coords="197,0,640,920" href="http://192.168.250.43/~me/dev.dropui.local/iphone.php?id=<?= $_GET["id"]; ?>&amp;page=<?= $_GET['page']+1?>"  onclick="OpenLink(this); return false" alt="" /> -->
 
-<? } elseif($_GET['page']==-1) { ?>
-  
-  <img name="Instructions" src="assets/img/iPhone-instructions2.png" width="640" height="920" border="0" id="Instructions" usemap="#m_Instructions" alt="" /><map name="m_Instructions" id="m_Instructions">
-  <area shape="rect" coords="0,0,187,920" href="http://192.168.250.43/~me/dev.dropui.local/iphone.php?id=<?= $_GET["id"]; ?>&amp;page=<?= $_GET['page']-1?>" onclick="OpenLink(this); return false" alt="" />
-  <area shape="rect" coords="197,0,640,920" href="http://192.168.250.43/~me/dev.dropui.local/iphone.php?id=<?= $_GET["id"]; ?>&amp;page=<?= $_GET['page']+1?>"  onclick="OpenLink(this); return false" alt="" />
-
-<? } elseif($_GET['page']==count($files1)) { ?>  
+<? } elseif($_GET['page']==count($files)) { ?>  
   
   <img name="Instructions" src="assets/img/iPhone-end.gif" width="640" height="920" border="0" id="Instructions" usemap="#m_Instructions" alt="" /><map name="m_Instructions" id="m_Instructions">
   <area shape="rect" coords="0,0,187,920" href="http://192.168.250.43/~me/dev.dropui.local/iphone.php?id=<?= $_GET["id"]; ?>&amp;page=<?= $_GET['page']-1?>" onclick="OpenLink(this); return false" alt="" />

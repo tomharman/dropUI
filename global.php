@@ -1,9 +1,9 @@
 <?
 
-// Global vars
+// Global vars + functions
 
 $UPLOAD_DIR = 'uploads/';
-$ROOT_URL = 'http://192.168.250.43/~me/dev.dropui.local/';
+$ROOT_URL = 'http://192.168.250.43/~me/dropui.local/';
 
 function generateURL(){
   
@@ -15,9 +15,9 @@ function generateURL(){
     for ($i = 0; $i < $length; $i++) {
         $res .= $chars[mt_rand(0, strlen($chars)-1)];
     }
-    $_SESSION['upload_dir'] = $_SESSION['upload_dir'] . $res . '/';
+    $UPLOAD_DIR = $UPLOAD_DIR . $res . '/';
     // If folder already exists go around loop again
-    if(file_exists($_SESSION['upload_dir'])){
+    if(file_exists($UPLOAD_DIR){
       $i--;
     }
   }
