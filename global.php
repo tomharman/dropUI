@@ -18,7 +18,7 @@ function generateURL(){
     }
     $UPLOAD_DIR = $UPLOAD_DIR . $res . '/';
     // If folder already exists go around loop again
-    if(file_exists($UPLOAD_DIR){
+    if(file_exists($UPLOAD_DIR)){
       $i--;
     }
   }

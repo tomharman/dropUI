@@ -1,2 +1,4 @@
 RewriteEngine On
-RewriteRule ^(.*)$ index.php?id=$1 [L]
+RewriteRule ^/?i/([0-9a-zA-Z_]+)/([0-9]+)$ iphone.php?id=$1&page=$2 [L]
+RewriteRule ^/?i/([0-9a-zA-Z_]+)$ iphone.php?id=$1 [L]
+RewriteRule ^/?([0-9a-zA-Z_]+)$ index.php?id=$1 [L]

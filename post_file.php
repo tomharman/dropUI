@@ -9,12 +9,12 @@ session_start();
 $demo_mode = false;
 $allowed_ext = array('jpg','jpeg','png','gif');
 
+$unique_upload_dir = $UPLOAD_DIR . $_SESSION['public_id'] . "/";
 
-
-if(!file_exists($upload_dir)){
+if(!file_exists($unique_upload_dir)){
   
   // make folder for this user
-  if(mkdir($upload_dir, 0777)){ 
+  if(mkdir($unique_upload_dir, 0777)){ 
    
   } else {
   	exit_status('couldn\'t build folder');
@@ -52,7 +52,7 @@ if(array_key_exists('pic',$_FILES) && $_FILES['pic']['error'] == 0 ){
 	// Move the uploaded file from the temporary 
 	// directory to the uploads folder:
 	
-	if(move_uploaded_file($pic['tmp_name'], $upload_dir.$pic['name'])){
+	if(move_uploaded_file($pic['tmp_name'], $unique_upload_dir.$pic['name'])){
 		exit_status('File was uploaded successfully!');
 	}
 	
