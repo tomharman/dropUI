@@ -6,6 +6,7 @@
   // Each time the page is loaded, generate new random public id
   unset($_SESSION['public_id']);
   $_SESSION['public_id'] = generateURL();
+  $_SESSION['upload_dir'] = $UPLOAD_DIR . $_SESSION['public_id'] . '/';
 
 ?>
 
@@ -25,22 +26,27 @@
     </head>
     
     <body>
+      <div id="container">
 		
   		<header>
-  			<h1>Drop UI – A Super Quick iPhone Prototyping tool for Designers</h1>
+  			<h1>Drop UI is a super-quick iPhone UI prototyping tool for Designers.</h1>
+  			<p>Drag your comps onto the space on the left, a URL can be viewed from your phone. Be careful not to refresh the page, or you'll have to start again.</p>
+    		<div id="url">
+    		  <p><a href="<?= $ROOT_URL?><?= $_SESSION['public_id'] ?>"><?= $ROOT_URL?><?= $_SESSION['public_id'] ?></a></p>
+          <!-- maybe add email functionality -->
+    		</div>
+    		<div id="credits">
+    		  <p>A small project by <a href="http://twitter.com/tomharman">@tomharman</a> made possible by Teehan + Lax and html5 tutorial</p>
+    		</div>
   		</header>
-		
-  		<div id="dropbox">
-  			<span class="message">Drag and Drop UI Here <br /><i>920px x 640px</i></span>
+	  <!-- <img src="assets/img/iPhone.png" width="403" height="868" alt="IPhone" /> -->
+	    <div id="iphone-frame">
+    		<div id="dropbox">
+    			<span class="message">Drag and Drop UI Here <br /><i>920px x 640px</i></span>
+    		</div>
   		</div>
-  		<div id="url">
-  		  <p><a href="<?= $ROOT_URL?><?= $_SESSION['public_id'] ?>"><?= $ROOT_URL?><?= $_SESSION['public_id'] ?></a></p>
-        <!-- maybe add email functionality -->
-  		</div>
-		
-      <footer>
-          <p>A small project by <a href="http://twitter.com/tomharman">@tomharman</a></p>
-      </footer>
+
+		</div>
       
       <!-- Including The jQuery Library -->
   		<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>

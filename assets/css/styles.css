@@ -26,7 +26,7 @@ html{
 body{
 	color:#111;
 	min-height:600px;
-	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+	font:14px/1.3 'Helvetica',Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 }
@@ -46,7 +46,15 @@ header, footer{
 }
 
 
+header {
+	margin: 15em 0 0 0;
+	width: 250px;
+	float: right;
+}
 
+h1 {
+	font-size: 1.2em;
+}
 
 
 /*-------------------------
@@ -56,23 +64,23 @@ header, footer{
 
 
 #dropbox{
-	background:#333;
+/*	background:#118;*/
 	color:#fff;
-	border-radius:3px;
+/*	border-radius:3px;*/
 	position: relative;
-	margin:80px auto 90px;
-	min-height: 290px;
+	margin: 0 auto;
+	text-align:center;
+	min-height: 460px;
 	overflow: hidden;
-	padding-bottom: 40px;
-    width: 990px;
-	
-	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);
+/*	padding-bottom: 40px;*/
+    width: 320px;	
+/*	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);*/
 }
 
 #dropbox .message{
 	font-size: 11px;
     text-align: center;
-    padding-top:160px;
+    padding-top:210px;
     display: block;
 }
 
@@ -81,39 +89,65 @@ header, footer{
 	font-size:10px;
 }
 
-#dropbox:before{
+/*#dropbox:before{
 	border-radius:3px 3px 0 0;
+}*/
+
+
+div#container {
+	margin: 0 auto;
+	width: 70%;
 }
-
-
 
 /*-------------------------
 	Image Previews
 --------------------------*/
 
+div#iphone-frame {
+	background: url('../img/iPhone.png');
+	background-size: 100%;
+	height: 868px;
+	height: 715px;
+	width: 403px;
+	margin: 3em auto 0;
+	padding-top: 153px;
+	
+/*	padding-top: 130px;
+	height: 608px;
+	width: 343px;*/
+}
+
 
 
 #dropbox .preview{
-	width:245px;
-	height: 215px;
-	float:left;
-	margin: 55px 0 0 60px;
-	position: relative;
-	text-align: center;
+	width:320px;
+	height: 460px;
+	
+/*	width: 272px;
+	height:391px;*/
+/*	float:left;*/
+	position: absolute;
+/*	text-align: center;
+*//*	margin-left: -300px;*/
+	display: block;
 }
 
 #dropbox .preview img{
-	max-width: 400px;
-	max-height:380px;
-	border:3px solid #fff;
-	display: block;
+	max-width: 320px;
+	max-height:460px;
+/*	border:3px solid #fff;
+*/	display: block;
 	
-	box-shadow:0 0 2px #000;
-}
+/*	box-shadow:0 0 2px #000;
+*/}
 
 #dropbox .imageHolder{
 	display: inline-block;
 	position:relative;
+}
+
+#dropbox .imageHolder img {
+		opacity: .25;
 }
 
 #dropbox .uploaded{
@@ -130,6 +164,10 @@ header, footer{
 	display: block;
 }
 
+#dropbox .preview.done {
+	left: 50px;
+}
+
 
 
 /*-------------------------
@@ -139,12 +177,14 @@ header, footer{
 
 
 #dropbox .progressHolder{
-	position: absolute;
+	position: relative;
 	background-color:#252f38;
-	height:12px;
-	width:100%;
-	left:0;
-	bottom: 0;
+	height:16px;
+	width:50%;
+	margin: 0 auto;
+	top: -238px;
+	opacity: 1;
+
 	
 	box-shadow:0 0 2px #000;
 }
@@ -162,6 +202,11 @@ header, footer{
 	-webkit-transition:0.25s;
 	-o-transition:0.25s;
 	transition:0.25s;
+}
+
+#dropbox .progress,
+#dropbox .progressHolder {
+	border-radius: 10px;
 }
 
 #dropbox .preview.done .progress{

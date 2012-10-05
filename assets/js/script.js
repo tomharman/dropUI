@@ -71,8 +71,8 @@ $(function(){
 			
 		var reader = new FileReader();
 		
-		image.width = 400;
-		image.height = 400;
+		// image.width = 400;
+		// image.height = 400;
 		
 		reader.onload = function(e){
 			

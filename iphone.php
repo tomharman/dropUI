@@ -6,8 +6,7 @@
     <meta charset="utf-8" />
     <title>Drop UI</title>
 
-    <meta name="viewport" content="user-scalable=no">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="apple-touch-icon-precomposed" href="assets/img/iosicon.png">
     <link rel="apple-touch-startup-image" href="assets/img/iosicon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
