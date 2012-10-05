@@ -4,6 +4,7 @@
 
 $UPLOAD_DIR = 'uploads/';
 $ROOT_URL = 'http://192.168.250.43/~me/dropui.local/';
+$ROOT_URL = 'http://dropui.com/';
 
 function generateURL(){
   
