@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>Drop UI</title>
 
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, height=device-height">
     <link rel="apple-touch-icon-precomposed" href="assets/img/iosicon.png">
     <link rel="apple-touch-startup-image" href="assets/img/iosicon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -15,33 +15,42 @@
     <base href="<?=$ROOT_URL?>" />
   
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
       
     <script type="text/javascript">
       function OpenLink(theLink){
         window.location.href = theLink.href;
       }
       
-      <? if(!isset($_GET['page'])){?>
+      <? if(!isset($_GET['page']) && isset($_GET['id'])){?>
       if (window.navigator.userAgent.indexOf('iPhone') != -1) {
     		if (window.navigator.standalone == true) {
     			//initialize();
-    			document.write('TTTTEST: <?=$ROOT_URL?>i/<?= $_GET["id"]; ?>/0');
     			document.location.href = '<?=$ROOT_URL?>i/<?= $_GET["id"]; ?>/0';
     		}else{
-    			document.write('<img src="assets/img/iPhone-predownload.gif" />');
+    			document.write('<h1>Tap the share button below and select<br /> <i>Add to <br />Home Screen</i></h1>');
     		}
     	}else{
         // document.location.href = 'please-open-from-iphone.html';
     	}
     	<? } ?>
+      // prevent user scrolling in app
+      function blockMove() {
+            event.preventDefault() ;
+      }
     
     </script>
     
   </head>
-  <body class="iPhone">
+  <body class="iPhone" ontouchmove="blockMove()">
   
   
-  <?
+<?  if(!isset($_GET['id'])){ ?>
+  
+  <h1 style="padding: 1.5em 1em">DropUI is super-quick iPhone prototyping tool for designers. <i>A computer is required to get started.</i></h1>
+  
+  <? } elseif(isset($_GET['page'])) {
   
   $dir  = getcwd() . '/uploads/' . $_GET['id'] . '/';
   $files = scandir($dir);
@@ -49,8 +58,7 @@
   // removes first, blank to records from array
   array_splice($files, 0, 2);
   
-
-if(isset($_GET['page'])){ ?>
+  ?>
   
   <!-- Instructions overlay -->
   <div id="overlay">

@@ -2,31 +2,24 @@
 	Simple reset
 --------------------------*/
 
-
-
 *{
 	margin:0;
 	padding:0;
 }
 
-
-
 /*-------------------------
 	General Styles
 --------------------------*/
 
-
-
 html{
 	min-height:100%;
 	position:relative;
-	
 }
 
 body{
-	color:#111;
+	color:#222;
 	min-height:600px;
-	font:14px/1.3 'Helvetica',Arial, sans-serif;
+	font:14px/1.3 'Open Sans', 'Helvetica',Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 }
@@ -34,7 +27,7 @@ body{
 a, a:visited {
 	text-decoration:none;
 	outline:none;
-	color:#54a6de;
+	color:#f04d15;
 }
 
 a:hover{
@@ -45,56 +38,85 @@ header, footer{
 	display:block;
 }
 
-
 header {
-	margin: 15em 0 0 0;
-	width: 250px;
+	margin: 150px 0 0 0;
+	width: 270px;
 	float: right;
 }
 
 h1 {
-	font-size: 1.2em;
+	font-size: 2.3em;
+	font-family: 'Gentium Book Basic', serif;
+	font-weight: normal;
+	margin-bottom: -4px;
+	padding: 2em;
+	text-align: center;
 }
 
+header h1 {
+	padding: 0;
+	text-align: left;
+}
+
+div#url {
+	background: #eee;
+	padding: 5px;
+	text-align: center;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+}
+
+div#url p {
+	margin: 15px;
+}
+
+header p {
+	font-size: 1em;
+	line-height: 1.7;
+	margin: 1.4em 0;
+}
+
+div#credits {
+	color: #ccc;
+	font-size: .9em;
+}
+
+div#credits a {
+	color: #ccc;
+	text-decoration: underline;
+}
+
+div#credits a:hover {
+	color: #aaa;
+}
 
 /*-------------------------
 	Dropbox Element
 --------------------------*/
 
-
-
 #dropbox{
-/*	background:#118;*/
-	color:#fff;
-/*	border-radius:3px;*/
 	position: relative;
 	margin: 0 auto;
 	text-align:center;
 	min-height: 460px;
-/*	overflow: hidden;*/
-/*	padding-bottom: 40px;*/
-    width: 320px;	
-/*	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);*/
+  width: 320px;	
 }
 
 #dropbox .message{
-	font-size: 11px;
-    text-align: center;
-    padding-top:210px;
-    display: block;
-position: absolute;
-width: 100%;
+	color: #fff;
+	font-size: 11px
+	text-align: center;
+	padding-top:210px;
+	display: block;
+	position: absolute;
+	width: 100%;
+	line-height: 1.4;
 }
 
 #dropbox .message i{
-	color:#ccc;
-	font-size:10px;
+	color: #444;
+	font-style: normal;
 }
-
-/*#dropbox:before{
-	border-radius:3px 3px 0 0;
-}*/
-
 
 div#container {
 	margin: 0 auto;
@@ -113,35 +135,22 @@ div#iphone-frame {
 	width: 403px;
 	margin: 3em auto 0;
 	padding-top: 153px;
-	
-/*	padding-top: 130px;
-	height: 608px;
-	width: 343px;*/
 }
-
-
 
 #dropbox .preview{
 	width:320px;
 	height: 460px;
-	
-/*	width: 272px;
-	height:391px;*/
-/*	float:left;*/
+	background: #000;
+	margin-left:1px;
 	position: absolute;
-/*	text-align: center;
-*//*	margin-left: -300px;*/
 	display: block;
 }
 
 #dropbox .preview img{
 	max-width: 320px;
 	max-height:460px;
-/*	border:3px solid #fff;
-*/	display: block;
-	
-/*	box-shadow:0 0 2px #000;
-*/}
+	display: block;
+}
 
 #dropbox .imageHolder{
 	display: inline-block;
@@ -149,7 +158,7 @@ div#iphone-frame {
 }
 
 #dropbox .imageHolder img {
-		opacity: .25;
+	opacity: .25;
 }
 
 #dropbox .uploaded{
@@ -161,10 +170,6 @@ div#iphone-frame {
 	background: #909;
 	display: none;
 }
-
-/*#dropbox .preview.done .uploaded{
-	display: block;
-}*/
 
 /* move the ui */
 #dropbox .preview.done {
@@ -191,25 +196,19 @@ div#iphone-frame {
 	width: 96px;
 	height: 138px;
 	opacity: 1;
-	
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);
-	
-	
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .3);	
 }
 
 #dropbox .preview.done .progressHolder {
 	display: none;
 }
 
-
 /*-------------------------
 	Progress Bars
 --------------------------*/
-
-
 
 #dropbox .progressHolder{
 	position: relative;
@@ -219,8 +218,6 @@ div#iphone-frame {
 	margin: 0 auto;
 	top: -238px;
 	opacity: 1;
-
-	
 	box-shadow:0 0 2px #000;
 }
 
@@ -230,9 +227,7 @@ div#iphone-frame {
 	height:100%;
 	left:0;
 	width:0;
-	
 	box-shadow: 0 0 1px rgba(255, 255, 255, 0.4) inset;
-	
 	-moz-transition:0.25s;
 	-webkit-transition:0.25s;
 	-o-transition:0.25s;
@@ -248,15 +243,14 @@ div#iphone-frame {
 	width:100% !important;
 }
 
-
 /* iPhone styles */
 
-body.iPhone { overflow: auto; }
+body.iPhone { overflow: hidden; }
 
 div#overlay {
 	position: absolute;
 	width: 100%;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 div#overlay nav {
@@ -264,19 +258,18 @@ div#overlay nav {
 }
 
 div#meta {
-	background: #901;
 	width: 640px;
-	height: 120px;
+	height: 60px;
 	display: block;
 	clear: both;
 }
 
 a#overlay-previous,
 a#overlay-next {
-	height: 800px;
+	height: 860px;
 	display: block;
-	background:#918;
 	position: relative;
+	text-indent: -999em;
 }
 
 a#overlay-previous {
@@ -288,10 +281,29 @@ a#overlay-next {
 	width: 500px;
 }
 
+p#overlay-url {
+	display: none;
+}
+
+p#overlay-page {
+	background: #000;
+	color: #fff;
+	opacity: .8;
+	padding: 10px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	width: 80px;
+	text-align: center;
+	margin-left: 10px;
+}
+
 p#iphone-time {
 	color:#ddd;
+	font-family: 'Helvetica', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	text-align: center;
-	margin-top: -17px;
+	margin-top: -20px;
+	height: 17px;
+	padding-top:3px;
 }

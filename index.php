@@ -17,8 +17,12 @@
         <meta charset="utf-8" />
         <title>Drop UI – A Super Quick iPhone Prototyping tool for Designers</title>
         
+        
         <!-- Our CSS stylesheet file -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="assets/css/styles.css" />
+        
         
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,17 +30,24 @@
     </head>
     
     <body>
+      
+      <? if(isset($_GET['id'])){ ?>
+
+      <h1>Please load this link from your iPhone</h1>
+
+      <? } else { ?>
+      
       <div id="container">
 		
   		<header>
-  			<h1>Drop UI is a super-quick iPhone UI prototyping tool for Designers.</h1>
-  			<p>Drag your comps onto the space on the left, a URL can be viewed from your phone. Be careful not to refresh the page, or you'll have to start again.</p>
+  			<h1>A super-quick iPhone prototyping tool for designers.</h1>
+  			<p><!-- Useful for remote research and demonstrating user journeys. --> To get started, simply drag your UI comps onto the iPhone screen on the left. After uploading, these screens will be turned into a tappable iPhone webapp, accessible at the URL below. Be careful not to refresh the page, or you'll have to start again.</p>
     		<div id="url">
     		  <p><a href="<?= $ROOT_URL?><?= $_SESSION['public_id'] ?>"><?= $ROOT_URL?><?= $_SESSION['public_id'] ?></a></p>
           <!-- maybe add email functionality -->
     		</div>
     		<div id="credits">
-    		  <p>A small project by <a href="http://twitter.com/tomharman">@tomharman</a> made possible by Teehan + Lax and html5 tutorial</p>
+    		  <p>A small project by <a href="http://twitter.com/tomharman">@tomharman</a> with help from <a href="www.teehanlax.com/blog/iphone-gui-psd-v4/">Teehan + Lax's iPhone PSD</a> and <a href="http://tutorialzine.com/2011/09/html5-file-upload-jquery-php/">this HTML5 upload tutorial</a>. Source on <a href="https://github.com/tomharman/dropUI">Github</a>.</p>
     		</div>
   		</header>
 	  <!-- <img src="assets/img/iPhone.png" width="403" height="868" alt="IPhone" /> -->
@@ -50,6 +61,7 @@
 
 		</div>
       
+      <? } ?>
       <!-- Including The jQuery Library -->
   		<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 	
@@ -68,7 +80,7 @@
             
       		}else{
       		  // app running from iPhone Safari
-      		  <? if(!isset($_GET['id'])){ ?>
+      		  <? if(isset($_GET['id'])){ ?>
       		    // no id specified, throw an error or say you need to add images from a computer
       		  <? } ?>
         		  document.location.href = '<?=$ROOT_URL?>i/<?= $_GET["id"]; ?>';

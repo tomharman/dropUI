@@ -7,12 +7,13 @@ $(function(){
 		// The name of the $_FILES entry:
 		paramname:'pic',
 		
-		maxfiles: 10,
+		maxfiles: 5,
     	maxfilesize: 2,
 		url: 'post_file.php',
 		
 		uploadFinished:function(i,file,response){
 			$.data(file).addClass('done');
+			message.show();
 			// response is the JSON object that post_file.php returns
 		},
 		
@@ -22,10 +23,10 @@ $(function(){
 					showMessage('Your browser does not support HTML5 file uploads!');
 					break;
 				case 'TooManyFiles':
-					alert('Too many files! Please select 5 at most! (configurable)');
+					alert('Too many files! Can only accept upto 5 at a time!');
 					break;
 				case 'FileTooLarge':
-					alert(file.name+' is too large! Please upload files up to 2mb (configurable).');
+					alert(file.name+' is too large! Please upload files up to 2mb');
 					break;
 				default:
 					break;
@@ -86,7 +87,7 @@ $(function(){
 		// this will trigger the onload function above:
 		reader.readAsDataURL(file);
 		
-		//message.hide();
+		message.hide();
 		preview.appendTo(dropbox);
 		
 		// Associating a preview container
