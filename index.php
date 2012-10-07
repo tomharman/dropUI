@@ -41,6 +41,8 @@
   		</header>
 	  <!-- <img src="assets/img/iPhone.png" width="403" height="868" alt="IPhone" /> -->
 	    <div id="iphone-frame">
+	      <? date_default_timezone_set('America/New_York') ?>
+	      <p id="iphone-time"><?= date('h:i')?></p>
     		<div id="dropbox">
     			<span class="message">Drag and Drop UI Here <br /><i>920px x 640px</i></span>
     		</div>

@@ -71,8 +71,8 @@ $(function(){
 			
 		var reader = new FileReader();
 		
-		// image.width = 400;
-		// image.height = 400;
+		image.width = 640;
+		image.height = 920;
 		
 		reader.onload = function(e){
 			
@@ -86,7 +86,7 @@ $(function(){
 		// this will trigger the onload function above:
 		reader.readAsDataURL(file);
 		
-		message.hide();
+		//message.hide();
 		preview.appendTo(dropbox);
 		
 		// Associating a preview container

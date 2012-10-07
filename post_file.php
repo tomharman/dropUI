@@ -11,10 +11,6 @@ $allowed_ext = array('jpg','jpeg','png','gif');
 
 $unique_upload_dir = $_SESSION['upload_dir'];
 
-// exit_status('TEST!!!1');
-// exit;
-echo $unique_upload_dir;
-
 if(!file_exists($unique_upload_dir)){
   
   // make folder for this user

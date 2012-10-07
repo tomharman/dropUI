@@ -2,9 +2,10 @@
 
 // Global vars + functions
 
-$UPLOAD_DIR = getcwd().'uploads/';
+$UPLOAD_DIR = 'uploads/';
 $ROOT_URL = 'http://192.168.250.71/~me/dropui.local/';
-// $ROOT_URL = 'http://dropui.com/';
+$ROOT_URL = 'http://10.0.2.21/~me/dropui.local/';
+$ROOT_URL = 'http://dropui.com/';
 
 function generateURL(){
   
