@@ -15,7 +15,7 @@
     <head>
       
         <meta charset="utf-8" />
-        <title>Drop UI – A Super-Quick iPhone Prototyping tool for Designers</title>
+        <title>DropUI – A Super-Quick iPhone Prototyping tool for Designers</title>
         
         <!-- Our CSS stylesheet file -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300' rel='stylesheet' type='text/css'>

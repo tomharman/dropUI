@@ -6,7 +6,7 @@
   <head>
     
     <meta charset="utf-8" />
-    <title>Drop UI – A Super-Quick iPhone Prototyping tool for Designers</title>
+    <title>DropUI – A Super-Quick iPhone Prototyping tool for Designers</title>
 
     <meta name="viewport" content="width=device-width, user-scalable=no, height=device-height">
     <meta name="apple-mobile-web-app-capable" content="yes" />
